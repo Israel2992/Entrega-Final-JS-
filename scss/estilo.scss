@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arvo', serif !important; }
+  
+  html {
+    font-size: 62.5%; }
+  
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: (3,1fr);
+    grid-template-rows: (3,1fr);
+    grid-template-areas:
+    "header-logo" "header-titulo" "header-login"
+    "main" "main" "main"
+    "footer" "footer" "footer";
+}
+
+
+/*-------------------------- HEADER ------------------------ */
+
+#header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to top,#020F59,#3C92A6);
+    .header-logo{
+        width:25vw;
+        height: 20vh;
+        grid-area: header-logo;
+        border-radius: 0.5rem;
+        img{
+            width: 12rem;
+        }
+    }
+    .header-titulo{
+        width: 50vw;
+        height: 20vh;
+        grid-area: header-titulo;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size: 5rem;
+        }
+    }
+
+    .header-saludo{
+        width: 50vw;
+        height: 20vh;
+        grid-area: header-titulo;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size: 5rem;
+        }
+    }
+
+    .header-login{
+        width: 25vw;
+        height: 20vh;
+        grid-area: header-login;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #login {
+            display: flex;
+            flex-direction: column;
+            label {
+                margin: 0.5rem;
+            }
+            p {
+                display: none;
+            }
+        }
+        button {
+            display: none;
+        }   
+    }
+}
+
+/*-------------------------- MAIN ------------------------ */
+
+#main{
+    width: 100vw;
+    height: 60vh;
+    grid-area: main;
+    background: linear-gradient(#020F59,#3C92A6);
+}
+
+
+#main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .servicios {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .servicios-img {
+            display: flex;
+            
+            img{
+                width: 26rem;
+                height: 27rem;
+                margin: 2rem;
+                border: 0.5rem solid white;
+                border-radius: 0.5rem;
+                transition: none;
+                transform: none;
+            }
+        }
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
+
+
+/*-------------------------- FOOTER ------------------------ */
+
+#footer{
+    width: 100vw;
+    height: 20vh;
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(#3C92A6,white);
+    button{
+        margin: 2rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    #modo-claro{
+        display: none;
+    }
+}

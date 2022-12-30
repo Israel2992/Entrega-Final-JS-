@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arvo', serif !important; }
+
+html {
+  font-size: 62.5%; }
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 3, 1fr;
+  grid-template-rows: 3, 1fr;
+  grid-template-areas: "header-logo" "header-titulo" "header-login" "main" "main" "main" "footer" "footer" "footer"; }
+
+/*-------------------------- HEADER ------------------------ */
+#header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to top, #020F59, #3C92A6); }
+  #header .header-logo {
+    width: 25vw;
+    height: 20vh;
+    grid-area: header-logo;
+    border-radius: 0.5rem; }
+    #header .header-logo img {
+      width: 12rem; }
+  #header .header-titulo {
+    width: 50vw;
+    height: 20vh;
+    grid-area: header-titulo;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #header .header-titulo h1 {
+      font-size: 5rem; }
+  #header .header-saludo {
+    width: 50vw;
+    height: 20vh;
+    grid-area: header-titulo;
+    display: none;
+    align-items: center;
+    justify-content: center; }
+    #header .header-saludo h1 {
+      font-size: 5rem; }
+  #header .header-login {
+    width: 25vw;
+    height: 20vh;
+    grid-area: header-login;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #header .header-login #login {
+      display: flex;
+      flex-direction: column; }
+      #header .header-login #login label {
+        margin: 0.5rem; }
+      #header .header-login #login p {
+        display: none; }
+    #header .header-login button {
+      display: none; }
+
+/*-------------------------- MAIN ------------------------ */
+#main {
+  width: 100vw;
+  height: 60vh;
+  grid-area: main;
+  background: linear-gradient(#020F59, #3C92A6); }
+
+#main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around; }
+  #main .servicios {
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+    #main .servicios .servicios-img {
+      display: flex; }
+      #main .servicios .servicios-img img {
+        width: 26rem;
+        height: 27rem;
+        margin: 2rem;
+        border: 0.5rem solid white;
+        border-radius: 0.5rem;
+        transition: none;
+        transform: none; }
+    #main .servicios h1 {
+      font-size: 4rem; }
+
+/*-------------------------- FOOTER ------------------------ */
+#footer {
+  width: 100vw;
+  height: 20vh;
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#3C92A6, white); }
+  #footer button {
+    margin: 2rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600; }
+  #footer #modo-claro {
+    display: none; }
