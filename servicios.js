@@ -1,4 +1,4 @@
-const oferta = [
+const listaServicios = [
     {
         "nombre": "Mantenimiento",
         "id": 1,

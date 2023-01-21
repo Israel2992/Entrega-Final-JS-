@@ -1,6 +1,6 @@
 
 const servicios = (array) => {
-    const contenedor = document.querySelector("#main")
+    const contenedor = document.querySelector(".main-productos")
     const serviciosReduce = array.reduce((acc, element) => {
         return acc + `
             <div class="servicios">
@@ -16,7 +16,7 @@ const servicios = (array) => {
     
     contenedor.innerHTML = serviciosReduce
 }
-servicios(oferta)
+servicios(listaServicios)
 
 
 
@@ -58,7 +58,7 @@ formLogin.onsubmit = (event) => {
             salir.style.display = "block"
             headerTitulo.style.display = "none"
             headerSaludo.style.display = "flex"
-            alert(`Bienvenido ${usuarios[i].name}`)              
+            swal(`Bienvenido ${usuarios[i].name}`)           
         }else {
             loginFailed.style.display = "block"
             inputUser.style.border = "1px solid red"
@@ -120,5 +120,17 @@ modoClaro.onclick = () => {
 
 
 
+// CARRUSEL 
 
-
+var swiper = new Swiper(".mySwiper", {
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+  });

@@ -27,7 +27,7 @@ html {
     grid-area: header-logo;
     border-radius: 0.5rem; }
     #header .header-logo img {
-      width: 12rem; }
+      width: 20rem; }
   #header .header-titulo {
     width: 50vw;
     height: 20vh;
@@ -55,42 +55,51 @@ html {
     justify-content: center; }
     #header .header-login #login {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      font-size: 2rem; }
       #header .header-login #login label {
         margin: 0.5rem; }
       #header .header-login #login p {
         display: none; }
+      #header .header-login #login input {
+        font-size: 1em; }
     #header .header-login button {
-      display: none; }
+      display: none;
+      font-size: 2rem;
+      border: solid black 0.2rem; }
 
 /*-------------------------- MAIN ------------------------ */
 #main {
   width: 100vw;
-  height: 60vh;
+  height: 200vh;
   grid-area: main;
   background: linear-gradient(#020F59, #3C92A6); }
 
 #main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around; }
-  #main .servicios {
+  #main .main-productos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center; }
-    #main .servicios .servicios-img {
-      display: flex; }
-      #main .servicios .servicios-img img {
-        width: 26rem;
-        height: 27rem;
-        margin: 2rem;
-        border: 0.5rem solid white;
-        border-radius: 0.5rem;
-        transition: none;
-        transform: none; }
-    #main .servicios h1 {
-      font-size: 4rem; }
+    #main .main-productos .servicios {
+      display: flex;
+      flex-direction: column;
+      text-align: center; }
+      #main .main-productos .servicios .servicios-img {
+        display: flex; }
+        #main .main-productos .servicios .servicios-img img {
+          width: 26rem;
+          height: 27rem;
+          margin: 2rem;
+          border: 0.5rem solid white;
+          border-radius: 0.5rem;
+          transition: none;
+          transform: none; }
+      #main .main-productos .servicios h1 {
+        font-size: 4rem; }
 
 /*-------------------------- FOOTER ------------------------ */
 #footer {
@@ -109,3 +118,35 @@ html {
     font-weight: 600; }
   #footer #modo-claro {
     display: none; }
+
+/*-------------------------- CARRUSEL ------------------------ */
+.swiper {
+  width: 75%;
+  height: 80vh; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+  .swiper-slide .imagen-carrusel {
+    height: 99%;
+    width: 99%; }
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
