@@ -86,6 +86,7 @@
             display: none;
             font-size: 2rem;
             border: solid black 0.2rem;
+            color: red($color: #000000);
         }   
     }
 }
@@ -132,10 +133,28 @@
                 font-size: 4rem;
             }
         }
+        
     }
-
-
-    
+    .form-new-user{
+        border: 0.5rem solid black;
+        border-radius: 2rem;
+        width: 40rem;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .registro{
+            width: 40rem;
+            height: 18rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            justify-content: space-between;
+            input{
+                font-size: 2.5rem;
+            }
+        }
+    }
 }
 
 
@@ -143,10 +162,10 @@
 
 #footer{
     width: 100vw;
-    height: 20vh;
+    height: 40vh;
     grid-area: footer;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background:linear-gradient(#3C92A6,white);
@@ -160,6 +179,8 @@
         display: none;
     }
 }
+
+
 
 /*-------------------------- CARRUSEL ------------------------ */
 
