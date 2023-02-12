@@ -98,4 +98,5 @@ const galeria = [
         "numero": 24,
         "img": "/imagenes/heli_8.jpg",
     }
+    
 ]

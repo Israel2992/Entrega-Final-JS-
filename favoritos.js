@@ -12,7 +12,7 @@ const imagen = (array) => {
         return acc + `
             <div class="imagen" id="${element.numero}">
                 <div class="imagen-img">
-                    <img clss ="imagen" src=${element.img} alt=${element.nombre}>
+                    <img clss ="imagen" src=${element.img} alt=${element.numero}>
                 </div>
                 <button id="boton-${element.numero}" class="boton-img" > Eliminar de Favoritos </button>
             </div>

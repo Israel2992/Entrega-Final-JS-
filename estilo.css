@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Arvo', serif; }
 
+  
 html {
   font-size: 62.5%; }
 
@@ -16,7 +17,9 @@ body {
   display: grid;
   grid-template-columns: 3, 1fr;
   grid-template-rows: 3, 1fr;
-  grid-template-areas: "header-logo" "header-titulo" "header-login" "main" "main" "main" "footer" "footer" "footer"; }
+  grid-template-areas: "header-logo" "header-titulo" "header-login"
+ "main" "main" "main"
+ "footer" "footer" "footer"; }
 
 /*-------------------------- HEADER ------------------------ */
 #header {
@@ -206,7 +209,8 @@ body {
   display: grid;
   grid-template-columns: 1, 1fr;
   grid-template-rows: 2, 1fr;
-  grid-template-areas: "header-favoritos"  "main-favoritos"; }
+  grid-template-areas: "header-favoritos" 
+ "main-favoritos"; }
 
 #header-favoritos {
   grid-area: header;
