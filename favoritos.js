@@ -25,6 +25,7 @@ imagen(informacionLocalStorage || [] )
 
 
 
+
 const borrarFavoritos = (array) =>{
     const botonAgregar = document.querySelectorAll(".boton-img")
 
