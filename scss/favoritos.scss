@@ -1,0 +1,87 @@
+
+#container-favoritos {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: (1,1fr);
+    grid-template-rows: (2,1fr);
+    grid-template-areas:
+    "header-favoritos" 
+    "main-favoritos";
+    
+}
+
+#header-favoritos{
+    grid-area: header;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .titulo-favoritos{
+        font-size: 6rem;
+        font-size: 900;
+        margin-left: 10rem;
+    }
+    button{
+        width: 20rem;
+        font-size: 3rem;
+        border-radius: 2rem;
+    }
+}
+
+#main-favoritos{
+    grid-area: main;
+    width: 100vw;
+    height: 150vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .contenedor-favoritos{
+        width: 95vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .imagen {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+            .imagen-img {
+                display: flex;
+                img{
+                    width: 29rem;
+                    height: 30rem;
+                    margin: 1rem;
+                    border: 0.5rem solid white;
+                    border-radius: 0.5rem;
+                    transition: none;
+                    transform: none;
+                }
+            }
+            button{
+                width: 80%;
+                font-size: 2rem;
+                font-weight: 900;
+                border: #fff;
+                border-radius: 2rem;
+            }
+        }  
+    }
+    .mensaje{
+        display: none;
+        font-size: 8rem;
+        font-weight: 900;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+   
+
+
+   
+}

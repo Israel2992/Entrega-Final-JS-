@@ -1,44 +1,42 @@
 
-const servicios = (array) => {
-    const contenedor = document.querySelector(".main-productos")
-    const serviciosReduce = array.reduce((acc, element) => {
-        return acc + `
-            <div class="servicios">
-                <div class="servicios-img">
-                    <img clss ="imagen" src=${element.img} alt=${element.nombre}>
-                </div>
-                <h1>
-                    ${element.nombre}
-                </h1>
-            </div>
-        `
-    }, "")
-    
-    contenedor.innerHTML = serviciosReduce
-}
-servicios(listaServicios)
+// CARRUSEL 
+
+var swiper = new Swiper(".mySwiper", {
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+  });
 
 
 
 
-const formLogin = document.querySelector("#login")
-const inputUser = document.querySelector("#input-user")
-const inputPassword = document.querySelector("#input-password")
-const loginFailed =document.querySelector("#error-login")
-const formContainer = document.querySelector(".header-login")
-const salir = document.querySelector("#logout")
-const modoOscuro = document.querySelector("#modo-oscuro")
-const modoClaro =document.querySelector("#modo-claro")
-const headerContainer = document.querySelector("#header")
-const mainContainer = document.querySelector("#main")
-const footerContainer = document.querySelector("#footer")
-const headerTitulo = document.querySelector(".header-titulo")
-const headerSaludo = document.querySelector(".header-saludo")
-
-const formUsuarioNuevo = document.querySelector(".registro")
-const inputNuevoNombre = document.querySelector("#new-name")
-const inputNuevoUsuario = document.querySelector("#new-user")
-const inputNuevoPassword = document.querySelector("#new-password")
+const formLogin             = document.querySelector( "#login")
+const inputUser             = document.querySelector( "#input-user")
+const inputPassword         = document.querySelector( "#input-password")
+const loginFailed           = document.querySelector( "#error-login")
+const formContainer         = document.querySelector( ".header-login")
+const salir                 = document.querySelector( "#logout")
+const modoOscuro            = document.querySelector( "#modo-oscuro")
+const modoClaro             = document.querySelector( "#modo-claro")
+const headerContainer       = document.querySelector( "#header")
+const mainContainer         = document.querySelector( "#main")
+const footerContainer       = document.querySelector( "#footer")
+const headerTitulo          = document.querySelector( ".header-titulo")
+const headerSaludo          = document.querySelector( ".header-saludo")
+const formUsuarioNuevo      = document.querySelector( ".registro")
+const inputNuevoNombre      = document.querySelector( "#new-name")
+const inputNuevoUsuario     = document.querySelector( "#new-user")
+const inputNuevoPassword    = document.querySelector("#new-password")
+const barraNav              = document.querySelector( "#navbarNav")
+const contenedor            = document.querySelector( ".main-productos")
+const contenedorBody        = document.querySelector("body")
 
 
 
@@ -186,39 +184,71 @@ formUsuarioNuevo.onsubmit = (event) =>{
 
 modoOscuro.onclick = ()  => {
     subirInfoLocalStorage("Modo Oscuro", true)
-    headerContainer.style.background ="linear-gradient(to top,black,#404040)" 
-    mainContainer.style.background = "black"
+    contenedorBody.style.background = "radial-gradient(circle,#464444,black)"
     mainContainer.style.color = "white"
-    footerContainer.style.background = "linear-gradient(black,#404040)"
     headerTitulo.style.color = "white"
     modoOscuro.style.display = "none"
     modoClaro.style.display = "flex"
+    barraNav.style.background = "#464444"
 }
 
 modoClaro.onclick = () => {
-    headerContainer.style.background ="linear-gradient(to top,#020F59,#3C92A6)" 
-    mainContainer.style.background = "linear-gradient(#020F59,#3C92A6)"
+    contenedorBody.style.background = "radial-gradient(circle,#3C92A6,#020F59)"
     mainContainer.style.color = "black"
-    footerContainer.style.background = "linear-gradient(#3C92A6,white)"
     headerTitulo.style.color = "black"
+    barraNav.style.background = "#020F59"
     modoOscuro.textContent = "Modo Oscuro"
     modoOscuro.style.display = "flex"
     modoClaro.style.display = "none"
 }
 
 
+// para agregar a favoritos
 
-// CARRUSEL 
+const imagen = (array) => {
+    const serviciosReduce = array.reduce((acc, element) => {
+        return acc + `
+            <div class="imagen" id="${element.numero}">
+                <div class="imagen-img">
+                    <img clss ="imagen" src=${element.img} alt=${element.nombre}>
+                </div>
+                <button id="boton-${element.numero}" class="boton-img" > Agregar a Favoritos </button>
+            </div>
+        `
+    }, "")
+    
+    contenedor.innerHTML = serviciosReduce
+}
+imagen(galeria)
 
-var swiper = new Swiper(".mySwiper", {
-    cssMode: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    mousewheel: true,
-    keyboard: true,
-  });
+
+
+
+
+const favoritos = []
+
+// llamo los botones que van a generar la accion de añadir a favoritos 
+
+const agregarFavoritos = (array) =>{
+    const botonAgregar = document.querySelectorAll(".boton-img")
+
+    botonAgregar.forEach(boton => {
+        boton.onclick = () =>{
+            const numero = boton.id.slice(6)
+            const filtrarImagen = array.find((elemento) => {
+                return elemento.numero === Number(numero)
+            })
+            favoritos.push(filtrarImagen)
+            console.log(favoritos)
+            localStorage.setItem("favoritos",JSON.stringify(favoritos))
+        }
+    })
+}
+agregarFavoritos(galeria)
+
+const imagenesFavoritas = JSON.parse(localStorage.getItem("favoritos"))
+favoritos = imagenesFavoritas || []
+
+
+
+

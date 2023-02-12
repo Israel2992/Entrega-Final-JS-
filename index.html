@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Proyecto </title>
+
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    
     <link rel="stylesheet" href="./estilo.css">
 </head>
 
-<body>
+<body id="body">
 
     <section id="container">
 
@@ -56,6 +63,25 @@
 
         <section id="main">
 
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="favoritos.html">Favoritos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#usuario-nuevo">Registro</a>
+                    </li><X-MAINTENANCEx></X-MAINTENANCEx>
+                  </ul>
+                </div>
+            </nav>
+
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                 <div class="swiper-slide"><img class ="imagen-carrusel" src="./imagenes/helicoptero_1.jpg" alt="helicoptero_1"></div>
@@ -73,19 +99,20 @@
 
             </div>
 
-            <div class="form-new-user">
+
+            <div class="form-new-user" id="usuario-nuevo">
                 <form class="registro">
-                    <labe>
+                    <label>
                         <input type="text" placeholder="Ingresa tu nombre completo" id="new-name">
-                    </labe>
+                    </label>
                     <label >
                         <input type="text" placeholder="Ingresa nuevo usuario" id="new-user">
                     </label>
                     <label>
                         <input type="text" placeholder="Ingresa una contraseña" id="new-password">
                     </label>
-                    <label >
-                        <input type="submit" value="Registrarse">
+                    <label class="boton-registro">
+                        <input type="submit" value="Registrarse" >
                     </label>
                 </form>
             </div>
@@ -106,9 +133,13 @@
     </section>
 
 
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--script navbar-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>        
     <script src="usuarios.js"></script>
     <script src="servicios.js"></script>
     <script src="index.js"></script>

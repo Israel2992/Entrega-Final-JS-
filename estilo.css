@@ -2,10 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Arvo', serif !important; }
+  font-family: 'Arvo', serif; }
 
 html {
   font-size: 62.5%; }
+
+body {
+  background: radial-gradient(circle, #3C92A6, #020F59); }
 
 #container {
   width: 100vw;
@@ -19,8 +22,7 @@ html {
 #header {
   display: flex;
   align-items: center;
-  text-align: center;
-  background: linear-gradient(to top, #020F59, #3C92A6); }
+  text-align: center; }
   #header .header-logo {
     width: 25vw;
     height: 20vh;
@@ -30,16 +32,17 @@ html {
       width: 20rem; }
   #header .header-titulo {
     width: 50vw;
-    height: 20vh;
+    height: 30vh;
     grid-area: header-titulo;
     display: flex;
     align-items: center;
     justify-content: center; }
     #header .header-titulo h1 {
-      font-size: 5rem; }
+      font-size: 5rem;
+      font-weight: 900; }
   #header .header-saludo {
     width: 50vw;
-    height: 20vh;
+    height: 30vh;
     grid-area: header-titulo;
     display: none;
     align-items: center;
@@ -48,7 +51,7 @@ html {
       font-size: 5rem; }
   #header .header-login {
     width: 25vw;
-    height: 20vh;
+    height: 30vh;
     grid-area: header-login;
     display: flex;
     align-items: center;
@@ -72,52 +75,81 @@ html {
 /*-------------------------- MAIN ------------------------ */
 #main {
   width: 100vw;
-  height: 200vh;
-  grid-area: main;
-  background: linear-gradient(#020F59, #3C92A6); }
+  height: 500vh;
+  grid-area: main; }
 
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around; }
-  #main .main-productos {
+  #main nav {
     display: flex;
+    justify-content: center;
+    width: 70vw;
+    height: 8vh;
+    border: white 0.5rem solid;
+    border-radius: 0.5rem; }
+    #main nav div {
+      background: radial-gradient(ellipse, #3C92A6, #020F59); }
+      #main nav div ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around; }
+        #main nav div ul a {
+          font-size: 3rem;
+          font-weight: bolder;
+          color: white; }
+  #main .main-productos {
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    text-align: center; }
-    #main .main-productos .servicios {
+    justify-content: space-evenly; }
+    #main .main-productos .imagen {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
-      text-align: center; }
-      #main .main-productos .servicios .servicios-img {
+      align-items: center;
+      margin: 2rem; }
+      #main .main-productos .imagen .imagen-img {
         display: flex; }
-        #main .main-productos .servicios .servicios-img img {
-          width: 26rem;
-          height: 27rem;
-          margin: 2rem;
+        #main .main-productos .imagen .imagen-img img {
+          width: 29rem;
+          height: 30rem;
+          margin: 1rem;
           border: 0.5rem solid white;
           border-radius: 0.5rem;
           transition: none;
           transform: none; }
-      #main .main-productos .servicios h1 {
-        font-size: 4rem; }
+      #main .main-productos .imagen button {
+        width: 80%;
+        font-size: 2rem;
+        font-weight: 900;
+        border: #fff;
+        border-radius: 2rem; }
   #main .form-new-user {
-    border: 0.5rem solid black;
+    border: 0.5rem solid white;
     border-radius: 2rem;
     width: 40rem;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    height: 35rem; }
     #main .form-new-user .registro {
       width: 40rem;
-      height: 18rem;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between; }
-      #main .form-new-user .registro input {
-        font-size: 2.5rem; }
+      justify-content: center; }
+      #main .form-new-user .registro label {
+        font-size: 2.5rem;
+        margin: 1rem; }
+      #main .form-new-user .registro .boton-registro {
+        display: flex;
+        width: 100%;
+        justify-content: center; }
+        #main .form-new-user .registro .boton-registro input {
+          width: 50%;
+          border-radius: 2rem; }
 
 /*-------------------------- FOOTER ------------------------ */
 #footer {
@@ -127,8 +159,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: linear-gradient(#3C92A6, white); }
+  justify-content: center; }
   #footer button {
     margin: 2rem;
     padding: 0.5rem;
@@ -168,3 +199,70 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover; }
+
+#container-favoritos {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1, 1fr;
+  grid-template-rows: 2, 1fr;
+  grid-template-areas: "header-favoritos"  "main-favoritos"; }
+
+#header-favoritos {
+  grid-area: header;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #header-favoritos .titulo-favoritos {
+    font-size: 6rem;
+    font-size: 900;
+    margin-left: 10rem; }
+  #header-favoritos button {
+    width: 20rem;
+    font-size: 3rem;
+    border-radius: 2rem; }
+
+#main-favoritos {
+  grid-area: main;
+  width: 100vw;
+  height: 150vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  #main-favoritos .contenedor-favoritos {
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    #main-favoritos .contenedor-favoritos .imagen {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem; }
+      #main-favoritos .contenedor-favoritos .imagen .imagen-img {
+        display: flex; }
+        #main-favoritos .contenedor-favoritos .imagen .imagen-img img {
+          width: 29rem;
+          height: 30rem;
+          margin: 1rem;
+          border: 0.5rem solid white;
+          border-radius: 0.5rem;
+          transition: none;
+          transform: none; }
+      #main-favoritos .contenedor-favoritos .imagen button {
+        width: 80%;
+        font-size: 2rem;
+        font-weight: 900;
+        border: #fff;
+        border-radius: 2rem; }
+  #main-favoritos .mensaje {
+    display: none;
+    font-size: 8rem;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center; }
