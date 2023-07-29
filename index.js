@@ -162,7 +162,7 @@ formUsuarioNuevo.onsubmit = (event) =>{
             swal(`Usuario Invalido`)
         }
 
-        fetch("https://63d485980e7ae91a009e7517.mockapi.io/usuariosNuevos", {
+        fetch("https://63d485980e7ae91a009e7517.mockapi.io/nuevosUsuarios", {
             method: "POST",
             body: JSON.stringify({
                 user:  `${user}`,
